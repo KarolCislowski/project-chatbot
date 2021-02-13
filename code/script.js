@@ -12,7 +12,7 @@ const showMessage = (message, sender) => {
         <div class="bubble ${sender}-bubble">
           <p>${message}</p>
         </div>
-        <img src="assets/${sender}.png" alt="${sender}" />  
+        <img src="assets/${sender}.png" alt="${sender}" />
       </section>
     `
   // This little thing makes the chat scroll to the last message when there are too many to be shown in the chat box
