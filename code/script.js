@@ -7,25 +7,14 @@ const chat = document.getElementById('chat')
 
 // This function will add a chat bubble in the correct place based on who the sender is
 const showMessage = (message, sender) => {
-  if (sender === 'user') {
-    chat.innerHTML += `
-      <section class="user-msg">
-        <div class="bubble user-bubble">
+  chat.innerHTML += `
+      <section class="${sender}-msg">
+        <div class="bubble ${sender}-bubble">
           <p>${message}</p>
         </div>
-        <img src="assets/user.png" alt="User" />  
+        <img src="assets/${sender}.png" alt="${sender}" />  
       </section>
     `
-  } else if (sender === 'bot') {
-    chat.innerHTML += `
-      <section class="bot-msg">
-        <img src="assets/bot.png" alt="Bot" />
-        <div class="bubble bot-bubble">
-          <p>${message}</p>
-        </div>
-      </section>
-    `
-  }
   // This little thing makes the chat scroll to the last message when there are too many to be shown in the chat box
   chat.scrollTop = chat.scrollHeight
 }
